@@ -20,8 +20,7 @@ function reverse (parolaGirata) {
   return parolaGirata
 }
 
-
-console.log(parolaGirata);
+console.log(reverse(parolaGirata));
 
 
 /* Pari e Dispari
@@ -32,15 +31,19 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto. */
 
 const numeroGiocatore = parseInt(prompt('inserisci un numero da 1 a 5'));
-console.log(numeroGiocatore);
-console.log(getRandom(1,5));
-const totale = somma(numeroGiocatore,getRandom(1,5));
-console.log(totale);
+console.log(`il numero inserito da te è: ${numeroGiocatore}`);
+
+const numeroComputer = getRandom(1,5);
+console.log(`il numero ramdom è: ${numeroComputer}`);
+
+const totale = somma(numeroGiocatore,numeroComputer);
+console.log(`la somma tra il numero random e quello inserito da te è: ${totale}`);
+
+console.log('il totale è un numero:' + pariDispari(totale)) ;
 
 
 function getRandom(min, max) {
-  const numeroComputer = (Math.ceil(Math.random()* (max - min +1) + min));
-  return numeroComputer ;
+  return (Math.ceil(Math.random()* (max - min +1) + min));
 }
 
 
@@ -49,15 +52,11 @@ function somma(numero1, numero2) {
   return sommaValori
 }
 
-function pariDispari () {
+function pariDispari(sommaValori) {
   if (sommaValori % 2) {
     return 'DISPARI'
   } else {
     return 'PARI'
   }
 }
-
-
-
-
 
