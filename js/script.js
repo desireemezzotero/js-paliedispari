@@ -9,18 +9,24 @@ Creare una funzione per capire se la parola inserita è palindroma */
 */
 
 
-const parola = prompt('inserisci una parola');
+const parola = prompt('inserisci una parola').toLocaleLowerCase() ;
 let parolaGirata = '';
+let message;
 
 function reverse (parolaGirata) {
   for (let i = parola.length -1; i>=0; i--) {
-    parolaGirata += parola.at(i)
+    parolaGirata += parola[i]
    }
-
   return parolaGirata
 }
 
-console.log(reverse(parolaGirata));
+if (parola == reverse(parolaGirata)) {
+  message = 'la parola è palindroma';
+} else {
+  message = 'la parola non è palindroma'
+}
+
+console.log(message);
 
 
 /* Pari e Dispari
